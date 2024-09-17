@@ -1,0 +1,20 @@
+#
+# Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
+#
+
+prefix=/home/ricky/Projects/Backend/Django/APIGestionLibros/env
+exec_prefix=/home/ricky/Projects/Backend/Django/APIGestionLibros/env
+libdir=/home/ricky/Projects/Backend/Django/APIGestionLibros/env/lib
+includedir=/home/ricky/Projects/Backend/Django/APIGestionLibros/env/include
+
+Name: liblzma
+Description: General purpose data compression library
+URL: https://xz.tukaani.org/xz-utils/
+Version: 5.4.6
+Cflags: -I${includedir}
+Cflags.private: -DLZMA_API_STATIC
+Libs: -L${libdir} -llzma
+Libs.private: -pthread -lpthread

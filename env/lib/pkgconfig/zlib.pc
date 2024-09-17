@@ -1,0 +1,13 @@
+prefix=/home/ricky/Projects/Backend/Django/APIGestionLibros/env
+exec_prefix=/home/ricky/Projects/Backend/Django/APIGestionLibros/env
+libdir=/home/ricky/Projects/Backend/Django/APIGestionLibros/env/lib
+sharedlibdir=/home/ricky/Projects/Backend/Django/APIGestionLibros/env/lib
+includedir=/home/ricky/Projects/Backend/Django/APIGestionLibros/env/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
