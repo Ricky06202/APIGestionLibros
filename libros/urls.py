@@ -4,7 +4,10 @@ from libros import views
 
 router = routers.DefaultRouter()
 router.register(r'Libro', views.LibroViewSet)
+router.register(r'Autores', views.AutorViewSet)
+router.register(r'Temas', views.TemaViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+
 ]
