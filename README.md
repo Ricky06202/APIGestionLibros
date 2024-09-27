@@ -1,6 +1,6 @@
 # Instalar Dependencias
 
-```bash
+```sh
 pip install django django-rest-framework coreapi psycopg2
 ```
 
