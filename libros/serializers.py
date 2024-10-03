@@ -20,8 +20,8 @@ class TemaIdSerializer(serializers.ModelSerializer):
         model = Temas
         fields = ['id']
 class LibroSerializer(serializers.ModelSerializer):
-    autor = AutorIdSerializer(many=True)
-    nombreTema = TemaIdSerializer(many=True)
+    autor = AutorSerializer(many=True)
+    nombreTema = TemaSerializer(many=True)
 
     class Meta:
         model = Libro
@@ -32,9 +32,11 @@ class LibroSerializer(serializers.ModelSerializer):
         tema_data = validated_data.pop('nombreTema')
         libro = Libro.objects.create(**validated_data)
         for a in autor_data:
-            autor = Autores.objects.get(id=a['id'])
+            autor = Autores.objects.get(**a)
+            print(autor)
             libro.autor.add(autor)
         for t in tema_data:
-            tema = Temas.objects.get(id=t['id'])
+            tema = Temas.objects.get(**t)
+            print(tema)
             libro.nombreTema.add(tema)
         return libro
