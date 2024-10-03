@@ -2,23 +2,17 @@ from rest_framework import serializers
 from .models import *
 
 class AutorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Autores
-        fields = ('__all__')
-class AutorIdSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     class Meta:
         model = Autores
-        fields = ['id']
+        fields = ('__all__')
+
 class TemaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Temas
-        fields = ('__all__')
-class TemaIdSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     class Meta:
         model = Temas
-        fields = ['id']
+        fields = ('__all__')
+
 class LibroSerializer(serializers.ModelSerializer):
     autor = AutorSerializer(many=True)
     nombreTema = TemaSerializer(many=True)
