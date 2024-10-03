@@ -20,8 +20,8 @@ class TemaIdSerializer(serializers.ModelSerializer):
         model = Temas
         fields = ['id']
 class LibroSerializer(serializers.ModelSerializer):
-    autor = AutorSerializer(many=True)
-    nombreTema = TemaSerializer(many=True)
+    autor = AutorIdSerializer(many=True)
+    nombreTema = TemaIdSerializer(many=True)
 
     class Meta:
         model = Libro
