@@ -27,8 +27,10 @@ class LibroSerializer(serializers.ModelSerializer):
         libro = Libro.objects.create(**validated_data)
         for a in autor_data:
             autor, created= Autores.objects.get_or_create(**a)
+            print(autor)
             libro.autor.add(autor)
         for t in tema_data:
             tema, created = Temas.objects.get_or_create(**t)
+            print(tema)
             libro.nombreTema.add(tema)
         return libro
